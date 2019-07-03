@@ -11,6 +11,8 @@ class Tv:
         self.channel += 1
     def channelLess(self):
         self.channel -= 1
+    def channelGoTo(self, num):
+        self.channel = num
 
 tv = Tv()
 print(tv.status)
@@ -20,4 +22,6 @@ print(tv.channel)
 tv.channelLess()
 print(tv.channel)
 tv.channelMore()
+print(tv.channel)
+tv.channelGoTo(35)
 print(tv.channel)
