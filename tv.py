@@ -3,16 +3,19 @@ class Tv:
         self.status = 'Desligada'
         self.channel = 5
     def power(self):
-        if self.status:
-            self.status = 'Ligando'
+        if self.status == 'Desligada':
+            self.status = 'Ligado'
         else:
-            self.status = 'Desligando'
+            self.status = 'Desligada'
     def channelMore(self):
-        self.channel += 1
+        if self.status == 'Ligado':
+            self.channel += 1
     def channelLess(self):
-        self.channel -= 1
+        if self.status == 'Ligado':
+            self.channel -= 1
     def channelGoTo(self, num):
-        self.channel = num
+        if self.status == 'Ligado':
+            self.channel = num
 
 tv = Tv()
 print(tv.status)
@@ -24,4 +27,8 @@ print(tv.channel)
 tv.channelMore()
 print(tv.channel)
 tv.channelGoTo(35)
+print(tv.channel)
+tv.power()
+print(tv.status)
+tv.channelGoTo(24)
 print(tv.channel)
